@@ -1,0 +1,15 @@
+git status // 
+
+git add 文件名
+git add . // 添加全部
+
+git commit -m '备注'
+git commit -am '添加+提交'
+
+git diff HEAD -- 文件名 // 查看区别
+
+git restore --staged 文件名 // 撤销add
+git reset HEAD 文件名 // 撤销add
+
+git log // 日志
+git log --pretty=oneline // 简单显示日志
