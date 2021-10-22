@@ -27,6 +27,7 @@ git reset HEAD <fileName> // 撤销上一次操作
 // 打印日志
 git log 
 git log --pretty=oneline // 简单显示日志
+git log --graph --pretty=oneline // 图表显示冲突
 git reflog // 历史日志
 
 // 版本回退
@@ -47,7 +48,7 @@ git rm <fileName> // 命令删除文件
 git clone <https/ssh地址>
 
 // 生产ssh密钥
-ssh-keygen -t rsa -C 'github邮箱' 
+ssh-keygen -t rsa -C 'github邮箱'
 // github设置 -> SSH and GPG keys // 删除尾行空格
 ssh -T git@github.com // 查看连接状态
 
@@ -65,7 +66,7 @@ git checkout -b <new_branchName> // 新建分支并切换到新建分支
 git branch -d <branchName> // 删除指定分支 -D强制
 git branch // 查看所有分支，*号标记当前所在分支
 git merge <branchName> // 合并分支
-git branch -m | -M oldbranch newbranch // 重命名分支，-M强制
+git branch -m | -M old_branch new_branch // 重命名分支，-M强制
 
 // 远程分支操作
 git branch -a // 查看本地与远程分支
@@ -77,3 +78,15 @@ git checkout -b <local_branch> origin/<remote_branchName> // 拉取远程指定�
 git fetch
 
 // 分支操作冲突
+// 删除
+// 多人协同操作冲突
+先 git pull 再 git push
+
+// 标签管理
+git tag tag_name // 新建标签 默认为HEAD 可加HEAD_ID
+git tag -a tag_name -m 'xxx' // 添加标签并指定标签描述信息 可加HEAD_ID
+git tag // 查看所有标签
+git tag -d tag_name // 删除一个本地标签
+git push origin tag_name // 推送本地标签到远程
+git push origin --tags // 推送全部未推送的本地标签到远程
+git push origin :refs/tags/tag_name // 删除一个远程标签
