@@ -55,3 +55,25 @@ ssh -T git@github.com // 查看连接状态
 // 绑定
 git remote add origin git@github.com......
 git push -u origin master
+
+// 推送远程仓库
+git push
+
+// 分支操作
+git checkout <branchName> / 切换到指定分支
+git checkout -b <new_branchName> // 新建分支并切换到新建分支
+git branch -d <branchName> // 删除指定分支 -D强制
+git branch // 查看所有分支，*号标记当前所在分支
+git merge <branchName> // 合并分支
+git branch -m | -M oldbranch newbranch // 重命名分支，-M强制
+
+// 远程分支操作
+git branch -a // 查看本地与远程分支
+git push origin <branchName> // 推送本地分支到远程
+git push origin :<branchName> // 删除远程分支（本地分支保留）
+git checkout -b <local_branch> origin/<remote_branchName> // 拉取远程指定分支并在本地创建分支
+
+// 获取远程仓库状态
+git fetch
+
+// 分支操作冲突
