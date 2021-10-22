@@ -75,3 +75,5 @@ git checkout -b <local_branch> origin/<remote_branchName> // 拉取远程指定�
 
 // 获取远程仓库状态
 git fetch
+
+// 分支操作冲突
