@@ -1,15 +1,57 @@
-git status // 
+Ctrl+Ins 复制
+Shift+Ins 粘贴
 
-git add 文件名
+// 查看暂存区
+git status 
+
+// 提交文件到暂存区 
+git add <fileName> 
 git add . // 添加全部
 
-git commit -m '备注'
-git commit -am '添加+提交'
+git commit -m '备注' 
+git commit -am '备注' // 当前目录所有文件 提交暂存区并提交
 
-git diff HEAD -- 文件名 // 查看区别
+// 与版本库进行比较
+git diff HEAD -- <fileName> 
+ // 差异比较说明
+ ‘---’ // 表示变动前的文件 
+ ‘+++’ // 表示变动后的文件
+ // 变动的位置用两个@作为起首和结束
+	@@ -1,2 +1,3 @@ 
+ // 减号表示第一个文件,‘1’表示第一行，‘2’表示连续2行. ‘+1,3’表示变动后，成为第二个文件从第1行开始的连续3行
 
-git restore --staged 文件名 // 撤销add
-git reset HEAD 文件名 // 撤销add
+// 撤销提交暂存区
+git restore --staged <fileName> // 可选 移除暂存区文件
+git reset HEAD <fileName> // 撤销上一次操作
 
-git log // 日志
+// 打印日志
+git log 
 git log --pretty=oneline // 简单显示日志
+git reflog // 历史日志
+
+// 版本回退
+git reset --hard HEAD^ // 回退上一次 ^ 次数
+git reset --hard HEAD~<num> // 回退<num>次
+git reset --hard <HEAD_ID> // 根据唯一标识
+
+git ls-files // 查看git仓库的文件
+
+git checkout <fileName> // pull版本
+
+// 删除git仓库文件
+git add <fileName> => git commit -m '删除文件' // 文件夹删除后提交更新git仓库
+git rm <fileName> // 命令删除文件
+
+// 远程仓库
+// 克隆远程项目
+git clone <https/ssh地址>
+
+// 生产ssh密钥
+ssh-keygen -t rsa -C 'github邮箱' 
+// github设置 -> SSH and GPG keys // 删除尾行空格
+ssh -T git@github.com // 查看连接状态
+
+// Push本地仓库
+// 绑定
+git remote add origin git@github.com......
+git push -u origin master
