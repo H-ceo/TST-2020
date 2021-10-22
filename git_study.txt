@@ -60,7 +60,7 @@ git push -u origin master
 git push
 
 // 分支操作
-git checkout branch // 切换到指定分支
+git checkout <branchName> / 切换到指定分支
 git checkout -b <new_branchName> // 新建分支并切换到新建分支
 git branch -d <branchName> // 删除指定分支
 git branch // 查看所有分支，*号标记当前所在分支
