@@ -42,6 +42,7 @@ git checkout <fileName> // pull版本
 // 删除git仓库文件
 git add <fileName> => git commit -m '删除文件' // 文件夹删除后提交更新git仓库
 git rm <fileName> // 命令删除文件
+git rm -rf <fileName> // 命令删除文件夹
 
 // 远程仓库
 // 克隆远程项目
